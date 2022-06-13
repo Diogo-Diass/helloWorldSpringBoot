@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastre-se</title>
+
+	<style>
+	body{
+		background-color: MediumBlue;
+				
+	}
+	form{
+		background-color: cyan;
+		margin: auto;
+		width:20%;
+		height:200px;
+		text-align: center;
+		
+
+	}
+	table{
+		margin:auto;
+	
+		
+	}
+	.h1{
+		color:red;
+	}
+	.botao{
+	background-color: white;
+	color: red;
+	
+	
+	}
+	
+	
+	</style>
+</head>
+<body>
+
+	
+<form method="post" class="form">	
+	<table class="table">
+	
+	<input type="hidden"  th:value="${cliente?.id}" name="id">
+	
+	<h1 class="h1">Cadastro de Cliente</h1>
+		<tr>
+			<td>Nome:</td>
+			<td><input type="text" name="nome" th:value="${cliente?.nome}"></td>
+		</tr>
+		
+		<tr>
+			<td>CPF:</td>
+			<td><input type="text" name="cpf"th:value="${cliente?.cpf}"></td>			
+		</tr>
+		
+		<tr>
+			<td>email:</td>
+			<td><input type="email" name="email"th:value="${cliente?.email}"></td>
+		</tr>	 
+		
+		<td><button type="submit" class="botao">Salvar</button></td>
+			
+			
+	</table>
+</form>
+</body>
+</html>

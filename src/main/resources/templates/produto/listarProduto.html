@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http//thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<style>
+.tabela{
+	margin:auto;
+	width:50%;
+	text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+
+
+<table class="tabela" border="1	">
+	
+		<tr>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>tipo</th>
+			<th>qtd</th>
+			<th>Alterar</th>
+			<th>Excluir</th>
+			
+		</tr>
+		
+		<tr th:each="p: ${produto}">
+			<td th:text="${p.id}">
+			<td th:text="${p.nome}">
+			<td th:text="${p.tipo}">
+			<td th:text="${p.qtd}">
+			<td><a th:href="@{/alterarProduto(id=${p.id})}"</a>Alterar</td>
+			<td><a th:href="@{/excluirProduto(id=${p.id})}"</a>Excluir</td>
+		
+		</tr>	
+		</table>
+		
+</body>
+</html>

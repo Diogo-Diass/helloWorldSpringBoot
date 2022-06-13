@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http//thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<style>
+.tabela{
+	border:5px solid black;
+	width:50%;
+	text-align: center;
+	margin: auto;	
+}
+
+</style>
+</head>
+<body>
+	<table class="tabela" border="1	">
+		<tr>
+			<th>Nome</th>
+			<th>Raca</th>	
+			<th>Porte</th>	
+			<th>Espécie</th>
+			<th>Nome Cliente</th>	
+			<th>Alterar</th>	
+			<th>Excluir</th>
+			<th>Ver Cliente</th>	
+		</tr>
+			<tr th:each="a: ${animal}">	
+			
+			
+				<td th:text="${a.nome}"></td>
+				<td th:text="${a.raca}"></td>
+				<td th:text="${a.porte}"></td>
+				<td th:text="${a.especie}"></td> 
+				<td th:text="${a.cliente.nome}"></td>
+				
+				<td> <a th:href="@{/alterarAnimal(id=${a.codigo})}">Alterar</td>
+				
+				<td><a th:href="@{/excluirAnimal(id=${a.codigo})}">Excluir</td>
+				
+				<td><a th:href="@{/alterarCliente(id=${a.cliente.id})}">Ver Cliente</td>
+			</tr>
+			</tr>
+			
+								
+		
+		
+	
+	</table>
+	
+</body>
+</html>

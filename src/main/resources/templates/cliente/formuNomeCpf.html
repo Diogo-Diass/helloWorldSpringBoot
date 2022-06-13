@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="buscarPorNome">
+		<label>Nome:</label>
+		<input type="search" name="nome"> 
+		<button type="submit">Buscar</button>
+	
+	</form>
+	
+	<form action="buscarPorCpf">
+		<label>Cpf:</label>
+		<input type="search" name="cpf">
+		<button type="submit">Busca</button>	
+	</form>
+<span style="color:red" th:text="${msg}"></span>
+
+</body>
+</html>
